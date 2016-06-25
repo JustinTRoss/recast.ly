@@ -1,10 +1,10 @@
 var VideoListEntry = (props) => (
   <div className="video-list-entry">
     <div className="media-left media-middle">
-      <img className="media-object" onClick={props.onClick} src={props.video.snippet.thumbnails.default.url} alt="" />
+      <img className="media-object" onClick={props.passClick} src={props.video.snippet.thumbnails.default.url} alt="" />
     </div>
     <div className="media-body">
-      <div className="video-list-entry-title" onClick={props.onClick}>{props.video.snippet.title}</div>
+      <div className="video-list-entry-title" onClick={props.passClick}>{props.video.snippet.title}</div>
       <div className="video-list-entry-detail">{props.video.snippet.description}</div>
     </div>
   </div>

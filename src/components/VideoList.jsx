@@ -2,7 +2,7 @@
 
 var VideoList = (props) => ( 
   <div className="video-list media">
-    {props.videos.map((video) => <VideoListEntry onClick={function() { props.onClick(video); } } video={video}/>) }
+    {props.videos.map((video) => <VideoListEntry passClick={function() { props.passClick(video); } } video={video}/>) }
   </div>
 );
 

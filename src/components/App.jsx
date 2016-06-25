@@ -4,8 +4,18 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      currentVideo: exampleVideoData[0],
-      videos: exampleVideoData
+      currentVideo: function() {
+        while (videoData === 'undefined') {
+        // do something
+        }
+        return videoData[0];
+      },
+      videos: function() {
+        while (videoData === 'undefined') {
+        // do something
+        }
+        return videoData;
+      }
     };
   }
 
@@ -23,7 +33,7 @@ class App extends React.Component {
         <VideoPlayer video={this.state.currentVideo}/>
       </div>
       <div className="col-md-5">
-        <VideoList onClick={this.handleClick.bind(this)} videos={this.state.videos}/>
+        <VideoList passClick={this.handleClick.bind(this)} videos={this.state.videos}/>
       </div>
     </div>;
   }
@@ -33,4 +43,4 @@ class App extends React.Component {
 // `var` declarations will only exist globally where explicitly defined
 window.App = App;
 
-ReactDOM.render(<App />, document.getElementById("app"));
+
