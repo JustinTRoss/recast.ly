@@ -1,14 +1,8 @@
-var VideoList = () => (
+// import maybe??
+
+var VideoList = (props) => ( 
   <div className="video-list media">
-    <VideoListEntry />
-    <VideoListEntry />
-    <VideoListEntry />
-    <VideoListEntry />
-    <VideoListEntry />
-    <VideoListEntry />
-    <VideoListEntry />
-    <VideoListEntry />
-    <VideoListEntry />
+    {props.videos.map((video) => <VideoListEntry onClick={function() { props.onClick(video); } } video={video}/>) }
   </div>
 );
 
