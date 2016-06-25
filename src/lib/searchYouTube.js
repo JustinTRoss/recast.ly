@@ -5,22 +5,23 @@ var searchYouTube = (options, callback) => {
     url: 'https://www.googleapis.com/youtube/v3/search',
     method: 'GET',
     data: {
-      q: 'dog',
-      key: API_KEY,
       part: 'snippet',
-      max: 10,
+      type: 'video',
       videoEmbeddable: true,
-      type: 'video'
+      q: options.query || 'dog',
+      key: options.key || YOUTUBE_API_KEY,
+      maxResult: options.max || 5
     },
     success: function(data) {
       console.log('data received');
-      videoData = data;
+      callback(data.items);
     },
     error: function() {
       console.log('error!');
     }
   });
 };
-searchYouTube(); 
+
+// searchYouTube();
 
 window.searchYouTube = searchYouTube;

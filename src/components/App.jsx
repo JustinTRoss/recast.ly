@@ -4,18 +4,8 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      currentVideo: function() {
-        while (videoData === 'undefined') {
-        // do something
-        }
-        return videoData[0];
-      },
-      videos: function() {
-        while (videoData === 'undefined') {
-        // do something
-        }
-        return videoData;
-      }
+      currentVideo: props.videoData[0],
+      videos: props.videoData
     };
   }
 
