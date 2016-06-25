@@ -10,7 +10,7 @@ var searchYouTube = (options, callback) => {
       videoEmbeddable: true,
       q: options.query || 'dog',
       key: options.key || YOUTUBE_API_KEY,
-      maxResult: options.max || 5
+      maxResults: options.max || 5
     },
     success: function(data) {
       console.log('data received');
