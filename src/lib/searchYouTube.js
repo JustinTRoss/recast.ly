@@ -1,5 +1,3 @@
-var videoData;
-
 var searchYouTube = (options, callback) => {
   $.ajax({
     url: 'https://www.googleapis.com/youtube/v3/search',
@@ -8,7 +6,7 @@ var searchYouTube = (options, callback) => {
       part: 'snippet',
       type: 'video',
       videoEmbeddable: true,
-      q: options.query || 'dog',
+      q: options.query || 'marmoset',
       key: options.key || YOUTUBE_API_KEY,
       maxResults: options.max || 5
     },
@@ -21,7 +19,5 @@ var searchYouTube = (options, callback) => {
     }
   });
 };
-
-// searchYouTube();
 
 window.searchYouTube = searchYouTube;
